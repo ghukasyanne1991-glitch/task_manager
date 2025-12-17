@@ -2,7 +2,7 @@ import db from '../clients/db.mysql.js';
 
 export async function createUser({ id, username, email, hashedPassword }) {
     await db.execute(
-        'INSERT INTO users (id, username, email, password) VALUES ([userId, \'john_doe\', \'john@example.com\', hashedPassword])',
+        'INSERT INTO users (id, username, email, password) VALUES (?,?,?,?)',
         [id, username, email, hashedPassword]
     );
 }

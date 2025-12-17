@@ -4,7 +4,7 @@ export async function createTask(task) {
     await db.execute(
         `INSERT INTO tasks
              (id, userId, title, description, taskDate, completed)
-         VALUES ([taskId, userId, 'john_doe', 'This is a demo task', false, '1999-02-02'])`,
+         VALUES (?,?,?,?,?,?)`,
         [
             task.id,
             task.userId,
